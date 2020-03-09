@@ -1,0 +1,22 @@
+program CadEscola;
+
+uses
+  Vcl.Forms,
+  Login in 'Login.pas' {FrmLogin},
+  Menu in 'Menu.pas' {FrmMenu},
+  Usuarios in 'Cadastros\Usuarios.pas' {FrmUsuarios},
+  Funcionarios in 'Cadastros\Funcionarios.pas' {FrmFuncionarios},
+  Cargos in 'Cadastros\Cargos.pas' {Form1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  Application.CreateForm(TFrmLogin, FrmLogin);
+  Application.CreateForm(TFrmMenu, FrmMenu);
+  Application.CreateForm(TFrmUsuarios, FrmUsuarios);
+  Application.CreateForm(TFrmFuncionarios, FrmFuncionarios);
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+end.

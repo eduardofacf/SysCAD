@@ -1,0 +1,36 @@
+unit Modulo;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, Data.DB, Data.Win.ADODB;
+
+type
+  Tdm = class(TDataModule)
+    ADOcnct: TADOConnection;
+    tb_Cargos: TADOTable;
+    query_cargos: TADOQuery;
+    query_cargosID_Cargos: TSmallintField;
+    query_cargosDescricao_Cargos: TStringField;
+    procedure DataModuleCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  dm: Tdm;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+procedure Tdm.DataModuleCreate(Sender: TObject);
+begin
+   ADOcnct.Connected := true;
+end;
+
+end.

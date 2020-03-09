@@ -1,0 +1,164 @@
+object dm: Tdm
+  OldCreateOrder = False
+  OnCreate = DataModuleCreate
+  Height = 368
+  Width = 645
+  object ADOcnct: TADOConnection
+    Connected = True
+    ConnectionString = 
+      'Provider=SQLOLEDB.1;Password=punkroc3;Persist Security Info=True' +
+      ';User ID=sa;Initial Catalog=SysCADproj;Data Source=PROGRAMADOR'
+    LoginPrompt = False
+    Provider = 'SQLOLEDB.1'
+    Left = 280
+    Top = 16
+  end
+  object tb_Cargos: TADOTable
+    Active = True
+    Connection = ADOcnct
+    CursorType = ctStatic
+    TableName = 'tb_Cargos'
+    Left = 120
+    Top = 72
+  end
+  object query_cargos: TADOQuery
+    Connection = ADOcnct
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select * from tb_Cargos order by  Descricao_Cargos asc')
+    Left = 120
+    Top = 120
+    object query_cargosID_Cargos: TSmallintField
+      DisplayLabel = 'ID'
+      DisplayWidth = 7
+      FieldName = 'ID_Cargos'
+      ReadOnly = True
+    end
+    object query_cargosDescricao_Cargos: TStringField
+      DisplayLabel = 'Cargo'
+      DisplayWidth = 40
+      FieldName = 'Descricao_Cargos'
+      Size = 50
+    end
+  end
+  object dsCargos: TDataSource
+    DataSet = query_cargos
+    Left = 120
+    Top = 176
+  end
+  object tb_Materia: TADOTable
+    Active = True
+    Connection = ADOcnct
+    CursorType = ctStatic
+    TableName = 'tb_Materia'
+    Left = 200
+    Top = 72
+  end
+  object query_materia: TADOQuery
+    Connection = ADOcnct
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select * from tb_Materia order by Descricao_Materia asc')
+    Left = 200
+    Top = 120
+    object query_materiaID_Materia: TSmallintField
+      DisplayLabel = 'ID'
+      DisplayWidth = 7
+      FieldName = 'ID_Materia'
+      ReadOnly = True
+    end
+    object query_materiaDescricao_Materia: TStringField
+      DisplayLabel = 'Mat'#233'ria'
+      DisplayWidth = 40
+      FieldName = 'Descricao_Materia'
+      Size = 50
+    end
+  end
+  object dsMateria: TDataSource
+    DataSet = query_materia
+    Left = 200
+    Top = 176
+  end
+  object tb_Funcionarios: TADOTable
+    Active = True
+    Connection = ADOcnct
+    CursorType = ctStatic
+    TableName = 'tb_Funcionarios'
+    Left = 32
+    Top = 72
+  end
+  object query_funcionarios: TADOQuery
+    Connection = ADOcnct
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select * from tb_Funcionarios order by Nome asc ')
+    Left = 32
+    Top = 120
+    object query_funcionariosID_Funcionarios: TSmallintField
+      DisplayLabel = 'ID'
+      FieldName = 'ID_Funcionarios'
+      ReadOnly = True
+      Visible = False
+    end
+    object query_funcionariosNome: TStringField
+      DisplayWidth = 25
+      FieldName = 'Nome'
+      Size = 30
+    end
+    object query_funcionariosCPF: TStringField
+      DisplayWidth = 15
+      FieldName = 'CPF'
+    end
+    object query_funcionariosEndereco: TStringField
+      DisplayLabel = 'Endere'#231'o'
+      DisplayWidth = 30
+      FieldName = 'Endereco'
+      Size = 50
+    end
+    object query_funcionariosTelefone: TStringField
+      DisplayWidth = 13
+      FieldName = 'Telefone'
+      Size = 15
+    end
+    object query_funcionariosCargo: TStringField
+      DisplayWidth = 12
+      FieldName = 'Cargo'
+      Size = 25
+    end
+    object query_funcionariosMateria: TStringField
+      DisplayLabel = 'Mat'#233'ria'
+      DisplayWidth = 15
+      FieldName = 'Materia'
+      Size = 25
+    end
+  end
+  object dsFuncionarios: TDataSource
+    DataSet = query_funcionarios
+    Left = 32
+    Top = 176
+  end
+  object tb_Escolas: TADOTable
+    Connection = ADOcnct
+    CursorType = ctStatic
+    TableName = 'tb_Escolas'
+    Left = 280
+    Top = 72
+  end
+  object query_escolas: TADOQuery
+    Connection = ADOcnct
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select * from tb_Funcionarios order by Nome asc ')
+    Left = 280
+    Top = 120
+  end
+  object dsEscolas: TDataSource
+    DataSet = query_escolas
+    Left = 280
+    Top = 176
+  end
+end
