@@ -51,6 +51,15 @@ type
     query_alunoTelefone: TStringField;
     query_alunoEndereco: TStringField;
     query_alunoSerie: TStringField;
+    tb_Usuarios: TADOTable;
+    query_usuarios: TADOQuery;
+    dsUsuarios: TDataSource;
+    query_usuariosID_Usuarios: TSmallintField;
+    query_usuariosNome: TStringField;
+    query_usuariosUsuario: TStringField;
+    query_usuariosSenha: TStringField;
+    query_usuariosCargo: TStringField;
+    query_usuariosID_Funcionario: TSmallintField;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
@@ -60,6 +69,13 @@ type
 
 var
   dm: Tdm;
+
+  //VARIÁVEIS GLOBAIS
+  idFunc : string;
+  nomeFunc : string;
+  cargoFunc : string;
+
+  chamada : string;
 
 implementation
 

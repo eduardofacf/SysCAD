@@ -197,7 +197,7 @@ begin
 
   if Trim(txtMatricula.Text) = '' then
   begin
-    MessageDlg('Preencha a Matrícula!', mtInformation, mbOKCancel, 0);
+    MessageDlg('Preencha a matrícula!', mtInformation, mbOKCancel, 0);
     txtMatricula.SetFocus;
     exit
   end;
@@ -231,7 +231,7 @@ begin
   dm.query_aluno.SQL.Add('SELECT * FROM tb_Aluno WHERE Matricula = ' + QuotedStr(Trim(txtMatricula.Text)));
   dm.query_aluno.Open;
 
-  if not dm.query_funcionarios.IsEmpty then
+  if not dm.query_aluno.IsEmpty then
   begin
     Matricula := dm.query_aluno['Matricula'];
     MessageDlg('A matrícula ' + Matricula + ' já está cadastrada!', mtInformation, mbOKCancel, 0);

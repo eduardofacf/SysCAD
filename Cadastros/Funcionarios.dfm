@@ -18,7 +18,7 @@ object FrmFuncionarios: TFrmFuncionarios
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
-    Left = 395
+    Left = 396
     Top = 27
     Width = 63
     Height = 13
@@ -347,6 +347,7 @@ object FrmFuncionarios: TFrmFuncionarios
       TitleFont.Name = 'Tahoma'
       TitleFont.Style = []
       OnCellClick = DBGrid1CellClick
+      OnDblClick = DBGrid1DblClick
     end
     object cbMateria: TComboBox
       Left = 249

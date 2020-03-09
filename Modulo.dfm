@@ -266,4 +266,54 @@ object dm: Tdm
     Left = 448
     Top = 176
   end
+  object tb_Usuarios: TADOTable
+    Connection = ADOcnct
+    TableName = 'tb_Usuarios'
+    Left = 520
+    Top = 72
+  end
+  object query_usuarios: TADOQuery
+    Connection = ADOcnct
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select * from tb_Usuarios order by Nome asc ')
+    Left = 520
+    Top = 120
+    object query_usuariosID_Usuarios: TSmallintField
+      FieldName = 'ID_Usuarios'
+      ReadOnly = True
+      Visible = False
+    end
+    object query_usuariosNome: TStringField
+      DisplayWidth = 30
+      FieldName = 'Nome'
+      Size = 30
+    end
+    object query_usuariosUsuario: TStringField
+      DisplayWidth = 15
+      FieldName = 'Usuario'
+      Size = 25
+    end
+    object query_usuariosSenha: TStringField
+      DisplayWidth = 15
+      FieldName = 'Senha'
+      Size = 25
+    end
+    object query_usuariosCargo: TStringField
+      DisplayWidth = 25
+      FieldName = 'Cargo'
+      Size = 25
+    end
+    object query_usuariosID_Funcionario: TSmallintField
+      DisplayWidth = 10
+      FieldName = 'ID_Funcionario'
+      Visible = False
+    end
+  end
+  object dsUsuarios: TDataSource
+    DataSet = query_usuarios
+    Left = 520
+    Top = 176
+  end
 end

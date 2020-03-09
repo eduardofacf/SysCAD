@@ -95,7 +95,7 @@ begin
 
   if CNPJantigo <> txtCNPJ.Text  then
     begin
-      //VERIFICAR SE O CPF JÁ FOI CADASTRADO
+      //VERIFICAR SE O CNPJ JÁ FOI CADASTRADO
       dm.query_escolas.Close;
       dm.query_escolas.SQL.Clear;
       dm.query_escolas.SQL.Add('SELECT * FROM tb_Escolas WHERE CNPJ = ' + QuotedStr(Trim(txtCNPJ.Text)));

@@ -56,7 +56,7 @@ begin
     exit
   end;
 
-  //VERIFICAR SE O CARGO JÁ FOI CADASTRADO
+  //VERIFICAR SE A SÉRIE JÁ FOI CADASTRADO
   dm.query_serie.Close;
   dm.query_serie.SQL.Clear;
   dm.query_serie.SQL.Add('SELECT * FROM tb_Serie WHERE Descricao_Serie = ' + QuotedStr(Trim(txtNome.Text)));
@@ -123,7 +123,7 @@ begin
     exit
   end;
 
-  //VERIFICAR SE O CARGO JÁ FOI CADASTRADO
+  //VERIFICAR SE A SÉRIE JÁ FOI CADASTRADO
   dm.query_serie.Close;
   dm.query_serie.SQL.Clear;
   dm.query_serie.SQL.Add('SELECT * FROM tb_Serie WHERE Descricao_Serie = ' + QuotedStr(Trim(txtNome.Text)));

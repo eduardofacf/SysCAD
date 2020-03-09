@@ -43,6 +43,7 @@ type
     procedure txtBuscarCPFChange(Sender: TObject);
     procedure rbNomeClick(Sender: TObject);
     procedure rbCPFClick(Sender: TObject);
+    procedure DBGrid1DblClick(Sender: TObject);
   private
     { Private declarations }
     procedure limpar;
@@ -155,7 +156,7 @@ begin
   btnExcluir.Enabled := false;
   limpar;
   desabilitarCampos;
-  //tá dando sal pivete XD
+
 end;
 
 procedure TFrmFuncionarios.btnExcluirClick(Sender: TObject);
@@ -296,10 +297,10 @@ end;
 
 procedure TFrmFuncionarios.cbCargoChange(Sender: TObject);
 begin
-    if cbCargo.ItemIndex = 1 then
-    begin
-      cbMateria.Enabled := true;
-    end;
+  if cbCargo.ItemIndex = 1 then
+  begin
+    cbMateria.Enabled := true;
+  end;
 end;
 
 procedure TFrmFuncionarios.DBGrid1CellClick(Column: TColumn);
@@ -322,29 +323,42 @@ begin
   CPFantigo :=  dm.query_funcionarios.FieldByName('CPF').Value;
 end;
 
+procedure TFrmFuncionarios.DBGrid1DblClick(Sender: TObject);
+begin
+  if chamada = 'Func' then
+  begin
+    idFunc := dm.query_funcionarios.FieldByName('ID_Funcionarios').Value;
+    nomeFunc := dm.query_funcionarios.FieldByName('Nome').Value;
+    cargoFunc := dm.query_funcionarios.FieldByName('Cargo').Value;
+    Close;
+    chamada := '';
+  end;
+
+end;
+
 procedure TFrmFuncionarios.desabilitarCampos;
 begin
- txtNome.Enabled := false;
- txtCPF.Enabled := false;
- txtEndereco.Enabled := false;
- txtTelefone.Enabled := false;
- cbCargo.Enabled := false;
- cbMateria.Enabled := false;
- cbMateria.ItemIndex := 0;
+  txtNome.Enabled := false;
+  txtCPF.Enabled := false;
+  txtEndereco.Enabled := false;
+  txtTelefone.Enabled := false;
+  cbCargo.Enabled := false;
+  cbMateria.Enabled := false;
+  cbMateria.ItemIndex := 0;
 end;
 
 
 procedure TFrmFuncionarios.FormShow(Sender: TObject);
 begin
-desabilitarCampos;
-dm.tb_Funcionarios.Active := true;
-listar;
-carregarCombobox1;
-carregarCombobox2;
-cbCargo.ItemIndex := 0;
-cbMateria.ItemIndex := 0;
-txtBuscarCPF.Visible := false;
-rbNome.Checked := true;
+  desabilitarCampos;
+  dm.tb_Funcionarios.Active := true;
+  listar;
+  carregarCombobox1;
+  carregarCombobox2;
+  cbCargo.ItemIndex := 0;
+  cbMateria.ItemIndex := 0;
+  txtBuscarCPF.Visible := false;
+  rbNome.Checked := true;
 end;
 
 procedure TFrmFuncionarios.habilitarCampos;
