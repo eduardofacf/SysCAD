@@ -10,8 +10,8 @@ uses
 type
   TFrmFuncionarios = class(TForm)
     txtBuscarNome: TEdit;
-    RadioButton1: TRadioButton;
-    RadioButton2: TRadioButton;
+    rbNome: TRadioButton;
+    rbCPF: TRadioButton;
     txtBuscarCPF: TMaskEdit;
     Label1: TLabel;
     Panel1: TPanel;
@@ -41,6 +41,8 @@ type
     procedure btnExcluirClick(Sender: TObject);
     procedure txtBuscarNomeChange(Sender: TObject);
     procedure txtBuscarCPFChange(Sender: TObject);
+    procedure rbNomeClick(Sender: TObject);
+    procedure rbCPFClick(Sender: TObject);
   private
     { Private declarations }
     procedure limpar;
@@ -294,7 +296,7 @@ end;
 
 procedure TFrmFuncionarios.cbCargoChange(Sender: TObject);
 begin
-    if cbCargo.ItemIndex = 2 then
+    if cbCargo.ItemIndex = 1 then
     begin
       cbMateria.Enabled := true;
     end;
@@ -341,6 +343,8 @@ carregarCombobox1;
 carregarCombobox2;
 cbCargo.ItemIndex := 0;
 cbMateria.ItemIndex := 0;
+txtBuscarCPF.Visible := false;
+rbNome.Checked := true;
 end;
 
 procedure TFrmFuncionarios.habilitarCampos;
@@ -370,6 +374,20 @@ begin
   dm.query_funcionarios.SQL.Clear;
   dm.query_funcionarios.SQL.Add('SELECT * FROM tb_Funcionarios order by Nome asc');
   dm.query_funcionarios.Open;
+end;
+
+procedure TFrmFuncionarios.rbCPFClick(Sender: TObject);
+begin
+  listar;
+  txtBuscarCPF.Visible := true;
+  txtBuscarNome.Visible := false;
+end;
+
+procedure TFrmFuncionarios.rbNomeClick(Sender: TObject);
+begin
+  listar;
+  txtBuscarCPF.Visible := false;
+  txtBuscarNome.Visible := true;
 end;
 
 procedure TFrmFuncionarios.txtBuscarCPFChange(Sender: TObject);

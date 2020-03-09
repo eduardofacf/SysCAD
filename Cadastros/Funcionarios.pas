@@ -155,7 +155,7 @@ begin
   btnExcluir.Enabled := false;
   limpar;
   desabilitarCampos;
-
+  //tá dando sal pivete XD
 end;
 
 procedure TFrmFuncionarios.btnExcluirClick(Sender: TObject);
