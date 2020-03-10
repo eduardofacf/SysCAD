@@ -108,7 +108,7 @@ begin
       dm.query_aluno.SQL.Add('SELECT * FROM tb_Aluno WHERE Matricula = ' + QuotedStr(Trim(txtMatricula.Text)));
       dm.query_aluno.Open;
 
-    if not dm.query_funcionarios.IsEmpty then
+    if not dm.query_aluno.IsEmpty then
     begin
       Matricula := dm.query_aluno['Matricula'];
       MessageDlg('A matrícula ' + Matricula + ' já está cadastrada!', mtInformation, mbOKCancel, 0);
@@ -166,11 +166,12 @@ procedure TFrmAluno.btnExcluirClick(Sender: TObject);
 begin
   if MessageDlg('Deseja excluir o registro?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
   begin
-    dm.tb_Aluno.Delete;
+    dm.query_aluno.Delete;
     MessageDlg('Deletado com sucesso!', mtInformation, mbOKCancel, 0);
     listar;
     btnEditar.Enabled := false;
     btnExcluir.Enabled := false;
+    txtNome.Text := '';
     limpar;
 
   end;

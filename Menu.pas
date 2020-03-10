@@ -30,6 +30,7 @@ type
     procedure Escola1Click(Sender: TObject);
     procedure Srie1Click(Sender: TObject);
     procedure Aluno1Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
   private
     { Private declarations }
   procedure centralizarPainel;
@@ -44,7 +45,16 @@ implementation
 
 {$R *.dfm}
 
-uses Usuarios, Funcionarios, Cargos, Materia, Escolas, Serie, Alunos;
+uses Usuarios, Funcionarios, Cargos, Materia, Escolas, Serie, Alunos, Modulo;
+
+procedure TFrmMenu.FormShow(Sender: TObject);
+begin
+  if (cargoUsuario = 'Administrador') or (cargoUsuario = 'Diretor(a)') then
+  begin
+    Usurio1.Enabled := true;
+  end;
+
+end;
 
 procedure TFrmMenu.Funcionrios1Click(Sender: TObject);
 begin

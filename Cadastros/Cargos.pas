@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.StdCtrls, Vcl.Buttons,
-  Vcl.Grids, Vcl.DBGrids;
+  Vcl.Grids, Vcl.DBGrids, strutils;
 
 type
   TFrmCargos = class(TForm)
@@ -16,6 +16,7 @@ type
     btnExcluir: TSpeedButton;
     Label2: TLabel;
     txtNome: TEdit;
+    cbExigeMateria: TCheckBox;
     procedure btnNovoClick(Sender: TObject);
     procedure btnSalvarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -43,6 +44,7 @@ uses Modulo;
 procedure TFrmCargos.associarCampos;
 begin
   dm.tb_Cargos.FieldByName('Descricao_Cargos').Value := txtNome.Text;
+  dm.tb_Cargos.FieldByName('exige_materia').Value := IfThen(cbExigeMateria.Checked, 'S', 'N');
 end;
 
 procedure TFrmCargos.btnEditarClick(Sender: TObject);
@@ -92,7 +94,7 @@ procedure TFrmCargos.btnExcluirClick(Sender: TObject);
 begin
   if MessageDlg('Deseja excluir o registro?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
   begin
-    dm.tb_Cargos.Delete;
+    dm.query_cargos.Delete;
     MessageDlg('Deletado com sucesso!', mtInformation, mbOKCancel, 0);
     listar;
     btnEditar.Enabled := false;
@@ -145,6 +147,7 @@ begin
   txtNome.Text := '';
   txtNome.Enabled := false;
   btnSalvar.Enabled := false;
+  cbExigeMateria.Checked := false;
   listar;
 end;
 

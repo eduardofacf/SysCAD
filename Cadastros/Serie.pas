@@ -92,7 +92,7 @@ procedure TFrmSerie.btnExcluirClick(Sender: TObject);
 begin
   if MessageDlg('Deseja excluir o registro?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
   begin
-    dm.tb_Serie.Delete;
+    dm.query_serie.Delete;
     MessageDlg('Deletado com sucesso!', mtInformation, mbOKCancel, 0);
     listar;
     btnEditar.Enabled := false;

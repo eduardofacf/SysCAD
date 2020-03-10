@@ -31,6 +31,7 @@ type
     procedure txtBuscarChange(Sender: TObject);
     procedure btnEditarClick(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
+    procedure btnExcluirClick(Sender: TObject);
   private
     { Private declarations }
     procedure limpar;
@@ -90,29 +91,29 @@ begin
   end;
 
   if usuarioAntigo <> txtUsuario.Text  then
-    begin
-      //VERIFICAR SE O USUÁRIO JÁ FOI CADASTRADO
-      dm.query_usuarios.Close;
-      dm.query_usuarios.SQL.Clear;
-      dm.query_usuarios.SQL.Add('SELECT * FROM tb_Usuarios WHERE Usuario = ' + QuotedStr(Trim(txtUsuario.Text)));
-      dm.query_usuarios.Open;
+  begin
+    //VERIFICAR SE O USUÁRIO JÁ FOI CADASTRADO
+    dm.query_usuarios.Close;
+    dm.query_usuarios.SQL.Clear;
+    dm.query_usuarios.SQL.Add('SELECT * FROM tb_Usuarios WHERE Usuario = ' + QuotedStr(Trim(txtUsuario.Text)));
+    dm.query_usuarios.Open;
 
-    if not dm.query_funcionarios.IsEmpty then
+    if not dm.query_usuarios.IsEmpty then
     begin
-      Usuario := dm.query_funcionarios['Usuario'];
+      Usuario := dm.query_usuarios['Usuario'];
       MessageDlg('O usuário ' + Usuario + ' já está cadastrado!', mtInformation, mbOKCancel, 0);
       txtUsuario.Text := '';
-      txtusuario.SetFocus;
+      txtUsuario.SetFocus;
       exit
     end;
   end;
 
-  if Trim(txtSenha.Text) = '' then
-  begin
-    MessageDlg('Preencha a senha!', mtInformation, mbOKCancel, 0);
-    txtSenha.SetFocus;
-    exit
-  end;
+   if Trim(txtSenha.Text) = '' then
+    begin
+      MessageDlg('Preencha a senha!', mtInformation, mbOKCancel, 0);
+      txtSenha.SetFocus;
+      exit
+    end;
 
   //associarCampos;
   dm.query_usuarios.Close;
@@ -131,6 +132,21 @@ begin
   limpar;
   desabilitarCampos;
 
+end;
+
+procedure TFrmUsuarios.btnExcluirClick(Sender: TObject);
+begin
+  if MessageDlg('Deseja excluir o registro?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+  begin
+    dm.query_usuarios.Delete;
+    MessageDlg('Deletado com sucesso!', mtInformation, mbOKCancel, 0);
+    listar;
+    btnEditar.Enabled := false;
+    btnExcluir.Enabled := false;
+    txtNome.Text := '';
+    limpar;
+
+  end;
 end;
 
 procedure TFrmUsuarios.btnNovoClick(Sender: TObject);

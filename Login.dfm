@@ -16,6 +16,7 @@ object FrmLogin: TFrmLogin
   Position = poDesigned
   WindowState = wsMaximized
   OnCanResize = FormCanResize
+  OnKeyDown = FormKeyDown
   PixelsPerInch = 96
   TextHeight = 13
   object Panel1: TPanel
@@ -15496,7 +15497,7 @@ object FrmLogin: TFrmLogin
         ParentFont = False
         OnClick = btnLoginClick
       end
-      object txtUser: TEdit
+      object txtUsuario: TEdit
         Left = 104
         Top = 175
         Width = 257
@@ -15512,7 +15513,7 @@ object FrmLogin: TFrmLogin
         ParentFont = False
         TabOrder = 0
       end
-      object txtPassword: TEdit
+      object txtSenha: TEdit
         Left = 104
         Top = 247
         Width = 257

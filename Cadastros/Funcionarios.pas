@@ -150,6 +150,14 @@ begin
   dm.query_funcionarios.Parameters.ParamByName('id').Value := id;
   dm.query_funcionarios.ExecSQL;
 
+  //EDITAR CARGO DE USUÁRIO
+  dm.query_usuarios.Close;
+  dm.query_usuarios.SQL.Clear;
+  dm.query_usuarios.SQL.Add('UPDATE tb_Usuarios set Cargo = :Cargo WHERE ID_Funcionario = :id');
+  dm.query_usuarios.Parameters.ParamByName('Cargo').Value := cbCargo.Text;
+  dm.query_usuarios.Parameters.ParamByName('id').Value := id;
+  dm.query_usuarios.ExecSQL;
+
   listar;
   MessageDlg('Editado com sucesso!', mtInformation, mbOKCancel, 0);
   btnEditar.Enabled := false;
@@ -163,14 +171,24 @@ procedure TFrmFuncionarios.btnExcluirClick(Sender: TObject);
 begin
   if MessageDlg('Deseja excluir o registro?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
   begin
-    dm.tb_Funcionarios.Delete;
+    dm.query_funcionarios.Delete;
     MessageDlg('Deletado com sucesso!', mtInformation, mbOKCancel, 0);
-    listar;
     btnEditar.Enabled := false;
     btnExcluir.Enabled := false;
+    txtNome.Text := '';
     limpar;
 
   end;
+
+  //DELETAR USUÁRIO ASSOCIADO
+  dm.query_usuarios.Close;
+  dm.query_usuarios.SQL.Clear;
+  dm.query_usuarios.SQL.Add('DELETE FROM tb_Usuarios WHERE ID_Funcionario = :id');
+  dm.query_usuarios.Parameters.ParamByName('id').Value := id;
+  dm.query_usuarios.ExecSQL;
+
+  listar;
+
 end;
 
 procedure TFrmFuncionarios.btnNovoClick(Sender: TObject);
@@ -262,16 +280,17 @@ begin
   dm.query_cargos.Close;
   dm.query_cargos.Open;
 
-if not dm.query_cargos.IsEmpty then
-begin
-  while not dm.query_cargos.Eof do
+  if not dm.query_cargos.IsEmpty then
   begin
-    cbCargo.Items.Add(dm.query_cargos.FieldByName('Descricao_Cargos').AsString);
-    dm.query_cargos.Next;
-
+    cbCargo.Clear;
+    cbCargo.Items.Add('Selecione:');
+    dm.query_cargos.First;
+    while not dm.query_cargos.Eof do
+    begin
+      cbCargo.Items.Add(dm.query_cargos.FieldByName('Descricao_Cargos').AsString);
+      dm.query_cargos.Next;
+    end;
   end;
-
-end;
 
 end;
 
@@ -297,10 +316,10 @@ end;
 
 procedure TFrmFuncionarios.cbCargoChange(Sender: TObject);
 begin
-  if cbCargo.ItemIndex = 1 then
-  begin
-    cbMateria.Enabled := true;
-  end;
+  if dm.query_cargos.Locate('Descricao_Cargos', cbCargo.Text, []) then
+    cbMateria.Enabled := SameText(dm.query_cargos.FieldByName('exige_materia').AsString, 'S')
+  else
+    cbMateria.Enabled := False;
 end;
 
 procedure TFrmFuncionarios.DBGrid1CellClick(Column: TColumn);
