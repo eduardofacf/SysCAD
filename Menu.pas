@@ -31,6 +31,7 @@ type
     procedure Srie1Click(Sender: TObject);
     procedure Aluno1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure Sair1Click(Sender: TObject);
   private
     { Private declarations }
   procedure centralizarPainel;
@@ -66,6 +67,11 @@ procedure TFrmMenu.Matria1Click(Sender: TObject);
 begin
   FrmMateria := TFrmMateria.Create(Self);
   FrmMateria.ShowModal;
+end;
+
+procedure TFrmMenu.Sair1Click(Sender: TObject);
+begin
+  close;
 end;
 
 procedure TFrmMenu.Srie1Click(Sender: TObject);

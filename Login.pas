@@ -92,6 +92,7 @@ begin
       FrmMenu := TFrmMenu.Create(FrmLogin);
       txtSenha.Text := '';
       FrmMenu.ShowModal;
+
     end
       else
     begin
@@ -100,7 +101,6 @@ begin
       txtSenha.Text := '';
       txtUsuario.SetFocus;
     end;
-
 
 end;
 

@@ -3,33 +3,33 @@
 	<Transactions>
     <Transaction>2020/02/12 12:53:22.000.042,=C:\Users\eduff\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2020/02/17 13:26:55.000.625,=C:\Users\eduff\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2020/02/17 13:27:31.000.564,C:\Users\eduff\Desktop\CRUD Escola\Login.dfm=C:\Users\eduff\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
     <Transaction>2020/02/17 13:27:31.000.564,C:\Users\eduff\Desktop\CRUD Escola\Login.pas=C:\Users\eduff\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2020/02/17 13:27:31.000.564,C:\Users\eduff\Desktop\CRUD Escola\Login.dfm=C:\Users\eduff\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
     <Transaction>2020/02/17 13:27:47.000.142,C:\Users\eduff\Desktop\CRUD Escola\CadEscola.dproj=C:\Users\eduff\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
     <Transaction>2020/02/18 13:38:05.000.777,=C:\Users\eduff\Desktop\CRUD Escola\Unit1.pas</Transaction>
-    <Transaction>2020/02/18 13:38:52.000.238,C:\Users\eduff\Desktop\CRUD Escola\Unit1.pas=C:\Users\eduff\Desktop\CRUD Escola\Menu.pas</Transaction>
     <Transaction>2020/02/18 13:38:52.000.238,C:\Users\eduff\Desktop\CRUD Escola\Unit1.dfm=C:\Users\eduff\Desktop\CRUD Escola\Menu.dfm</Transaction>
+    <Transaction>2020/02/18 13:38:52.000.238,C:\Users\eduff\Desktop\CRUD Escola\Unit1.pas=C:\Users\eduff\Desktop\CRUD Escola\Menu.pas</Transaction>
     <Transaction>2020/02/18 17:19:19.000.283,=C:\Users\eduff\Desktop\CRUD Escola\Unit1.pas</Transaction>
     <Transaction>2020/02/18 17:20:50.000.449,=C:\Users\eduff\Desktop\CRUD Escola\Unit1.pas</Transaction>
-    <Transaction>2020/02/18 17:21:19.000.740,C:\Users\eduff\Desktop\CRUD Escola\Unit1.pas=C:\Users\eduff\Desktop\CRUD Escola\Usuarios.pas</Transaction>
     <Transaction>2020/02/18 17:21:19.000.783,C:\Users\eduff\Desktop\CRUD Escola\Unit1.dfm=C:\Users\eduff\Desktop\CRUD Escola\Usuarios.dfm</Transaction>
-    <Transaction>2020/02/19 15:40:08.000.074,C:\Users\eduff\Desktop\CRUD Escola\Cadastros\Usuarios.pas=C:\Users\eduff\Desktop\CRUD Escola\Usuarios.pas</Transaction>
+    <Transaction>2020/02/18 17:21:19.000.740,C:\Users\eduff\Desktop\CRUD Escola\Unit1.pas=C:\Users\eduff\Desktop\CRUD Escola\Usuarios.pas</Transaction>
     <Transaction>2020/02/19 15:40:08.000.074,C:\Users\eduff\Desktop\CRUD Escola\Cadastros\Usuarios.dfm=C:\Users\eduff\Desktop\CRUD Escola\Usuarios.dfm</Transaction>
+    <Transaction>2020/02/19 15:40:08.000.074,C:\Users\eduff\Desktop\CRUD Escola\Cadastros\Usuarios.pas=C:\Users\eduff\Desktop\CRUD Escola\Usuarios.pas</Transaction>
     <Transaction>2020/02/19 15:41:26.000.505,=C:\Users\eduff\Desktop\CRUD Escola\Unit1.pas</Transaction>
     <Transaction>2020/02/19 15:41:47.000.735,C:\Users\eduff\Desktop\CRUD Escola\Cadastros\Funcionarios.dfm=C:\Users\eduff\Desktop\CRUD Escola\Unit1.dfm</Transaction>
     <Transaction>2020/02/19 15:41:47.000.735,C:\Users\eduff\Desktop\CRUD Escola\Cadastros\Funcionarios.pas=C:\Users\eduff\Desktop\CRUD Escola\Unit1.pas</Transaction>
     <Transaction>2020/02/20 15:44:53.000.570,=C:\Users\eduff\Desktop\CRUD Escola\Unit1.pas</Transaction>
-    <Transaction>2020/02/20 15:45:03.000.636,C:\Users\eduff\Desktop\CRUD Escola\Cadastros\Cargos.pas=C:\Users\eduff\Desktop\CRUD Escola\Unit1.pas</Transaction>
     <Transaction>2020/02/20 15:45:03.000.636,C:\Users\eduff\Desktop\CRUD Escola\Cadastros\Cargos.dfm=C:\Users\eduff\Desktop\CRUD Escola\Unit1.dfm</Transaction>
+    <Transaction>2020/02/20 15:45:03.000.636,C:\Users\eduff\Desktop\CRUD Escola\Cadastros\Cargos.pas=C:\Users\eduff\Desktop\CRUD Escola\Unit1.pas</Transaction>
     <Transaction>2020/02/20 17:09:33.000.999,=C:\Users\eduff\Desktop\CRUD Escola\Unit1.pas</Transaction>
-    <Transaction>2020/02/20 17:10:43.000.834,C:\Users\eduff\Desktop\CRUD Escola\Modulo.pas=C:\Users\eduff\Desktop\CRUD Escola\Unit1.pas</Transaction>
     <Transaction>2020/02/20 17:10:43.000.834,C:\Users\eduff\Desktop\CRUD Escola\Modulo.dfm=C:\Users\eduff\Desktop\CRUD Escola\Unit1.dfm</Transaction>
+    <Transaction>2020/02/20 17:10:43.000.834,C:\Users\eduff\Desktop\CRUD Escola\Modulo.pas=C:\Users\eduff\Desktop\CRUD Escola\Unit1.pas</Transaction>
     <Transaction>2020/02/23 13:31:53.000.717,C:\Users\eduff\Desktop\SysCAD\Modulo.pas=</Transaction>
     <Transaction>2020/02/26 12:10:41.000.126,C:\Users\eduff\Desktop\SysCAD\Cadastros\Cargos.pas=</Transaction>
     <Transaction>2020/02/26 12:19:08.000.257,=C:\Users\eduff\Desktop\SysCAD\Unit1.pas</Transaction>
     <Transaction>2020/02/26 12:32:11.000.777,=C:\Users\eduff\Desktop\SysCAD\Unit1.pas</Transaction>
-    <Transaction>2020/02/26 12:32:23.000.910,C:\Users\eduff\Desktop\SysCAD\Cadastros\Cargos.pas=C:\Users\eduff\Desktop\SysCAD\Unit1.pas</Transaction>
     <Transaction>2020/02/26 12:32:23.000.910,C:\Users\eduff\Desktop\SysCAD\Cadastros\Cargos.dfm=C:\Users\eduff\Desktop\SysCAD\Unit1.dfm</Transaction>
+    <Transaction>2020/02/26 12:32:23.000.910,C:\Users\eduff\Desktop\SysCAD\Cadastros\Cargos.pas=C:\Users\eduff\Desktop\SysCAD\Unit1.pas</Transaction>
     <Transaction>2020/02/26 13:05:56.000.759,=C:\Users\eduff\Desktop\SysCAD\Unit1.pas</Transaction>
     <Transaction>2020/02/26 13:07:12.000.535,C:\Users\eduff\Desktop\SysCAD\Modulo.dfm=C:\Users\eduff\Desktop\SysCAD\Unit1.dfm</Transaction>
     <Transaction>2020/02/26 13:07:12.000.535,C:\Users\eduff\Desktop\SysCAD\Modulo.pas=C:\Users\eduff\Desktop\SysCAD\Unit1.pas</Transaction>
@@ -37,5 +37,9 @@
     <Transaction>2020/03/06 17:27:32.000.342,=C:\Users\eduff\Desktop\SysCAD\Cadastros\Escolas.pas</Transaction>
     <Transaction>2020/03/07 10:22:55.000.174,=C:\Users\eduff\Desktop\SysCAD\Cadastros\Serie.pas</Transaction>
     <Transaction>2020/03/07 11:08:53.000.420,=C:\Users\eduff\Desktop\SysCAD\Cadastros\Alunos.pas</Transaction>
+    <Transaction>2020/03/11 16:35:37.000.506,=C:\Users\eduff\Desktop\SysCAD\Unit1.pas</Transaction>
+    <Transaction>2020/03/11 16:38:08.000.689,C:\Users\eduff\Desktop\SysCAD\Unit1.pas=C:\Users\eduff\Desktop\SysCAD\Relatorio.pas</Transaction>
+    <Transaction>2020/03/11 16:38:08.000.689,C:\Users\eduff\Desktop\SysCAD\Unit1.dfm=C:\Users\eduff\Desktop\SysCAD\Relatorio.dfm</Transaction>
+    <Transaction>2020/03/11 17:32:05.027,C:\Users\eduff\Desktop\SysCAD\Relatorio.pas=</Transaction>
   </Transactions>
 </BorlandProject>
