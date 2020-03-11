@@ -31,6 +31,7 @@ type
     procedure txtBuscarChange(Sender: TObject);
     procedure btnEditarClick(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
+    procedure btnExcluirClick(Sender: TObject);
   private
     { Private declarations }
     procedure limpar;
@@ -131,6 +132,21 @@ begin
   limpar;
   desabilitarCampos;
 
+end;
+
+procedure TFrmUsuarios.btnExcluirClick(Sender: TObject);
+begin
+  if MessageDlg('Deseja excluir o registro?', mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+  begin
+    dm.query_usuarios.Delete;
+    MessageDlg('Deletado com sucesso!', mtInformation, mbOKCancel, 0);
+    listar;
+    btnEditar.Enabled := false;
+    btnExcluir.Enabled := false;
+    txtNome.Text := '';
+    limpar;
+
+  end;
 end;
 
 procedure TFrmUsuarios.btnNovoClick(Sender: TObject);
@@ -257,7 +273,8 @@ procedure TFrmUsuarios.listar;
 begin
   dm.query_usuarios.Close;
   dm.query_usuarios.SQL.Clear;
-  dm.query_usuarios.SQL.Add('SELECT * FROM tb_Usuarios order by Nome asc');
+  dm.query_usuarios.SQL.Add('SELECT * FROM tb_Usuarios WHERE Cargo <> :Cargo order by Nome asc');
+  dm.query_usuarios.Parameters.ParamByName('Cargo').Value := 'Administrador';
   dm.query_usuarios.Open;
 end;
 

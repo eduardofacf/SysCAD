@@ -49,7 +49,7 @@ uses Usuarios, Funcionarios, Cargos, Materia, Escolas, Serie, Alunos, Modulo;
 
 procedure TFrmMenu.FormShow(Sender: TObject);
 begin
-  if (cargoUsuario = 'Administrador') or (cargoUsuario = 'DIRETOR(A)') then
+  if (cargoUsuario = 'Administrador') or (cargoUsuario = 'Diretor(a)') then
   begin
     Usurio1.Enabled := true;
   end;

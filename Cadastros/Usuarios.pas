@@ -212,8 +212,9 @@ procedure TFrmUsuarios.buscarNome;
 begin
   dm.query_usuarios.Close;
   dm.query_usuarios.SQL.Clear;
-  dm.query_usuarios.SQL.Add('SELECT * FROM tb_Usuarios WHERE Nome LIKE :Nome order by Nome asc');
+  dm.query_usuarios.SQL.Add('SELECT * FROM tb_Usuarios WHERE Nome LIKE :Nome AND Cargo <> :Cargo order by Nome asc');
   dm.query_usuarios.Parameters.ParamByName('Nome').Value := txtBuscar.Text + '%';
+  dm.query_usuarios.Parameters.ParamByName('Cargo').Value := 'Administrador';
   dm.query_usuarios.Open;
 end;
 
@@ -273,7 +274,8 @@ procedure TFrmUsuarios.listar;
 begin
   dm.query_usuarios.Close;
   dm.query_usuarios.SQL.Clear;
-  dm.query_usuarios.SQL.Add('SELECT * FROM tb_Usuarios order by Nome asc');
+  dm.query_usuarios.SQL.Add('SELECT * FROM tb_Usuarios WHERE Cargo <> :Cargo order by Nome asc');
+  dm.query_usuarios.Parameters.ParamByName('Cargo').Value := 'Administrador';
   dm.query_usuarios.Open;
 end;
 
